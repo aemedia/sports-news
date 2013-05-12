@@ -1,0 +1,9 @@
+<h1><%=params[:sport_id]%> > <%=params[:league_id]%> > <%=params[:team_name]%> </h1>
+<ul>
+	<%@parsed_news.each do |n|%>
+	<li>
+		<b><%=n["title"]%></b>
+		<p><%=n["description"]%><p>
+	</li>
+	<%end%>
+</ul>

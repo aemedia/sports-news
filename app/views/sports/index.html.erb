@@ -1,0 +1,7 @@
+<h1>Sports list</h1>
+<br>
+<ul>
+	<%@parsed_sports.each do |sport|%>
+	<li><%=link_to sport["name"], sport_leagues_url(sport["name"])%></li>
+	<%end%>
+</ul>

@@ -1,0 +1,56 @@
+<%=link_to "Go to all Sports", sports_url%>
+
+<div class="row">
+	<div class="span4">
+		<div id="teams_list" >
+			<ul id="sports" class="unstyled">
+			</ul>
+		</div>
+	</div>
+	<div class="span8" id="news">
+
+	</div>
+</div>
+
+<script id="leagues-template" type="text/template">
+	{{#sports}}
+	<li id={{name}}><h3>{{name}}</h3></li>
+	<ul id="leagues">
+		{{#leagues}}
+		<li id={{abbreviation}} class="leagues"> {{name}} <small class="muted">{{abbreviation}}</small> </li>
+		{{/leagues}}
+	</ul>
+	{{/sports}}
+</script>
+
+
+<script id="teams-template" type="text/template">
+	{{#sports}}
+	{{#leagues}}
+	{{#teams}}
+	<li id={{id}}|{{name}} class="teams"><a href="#"><i class="icon-chevron-right"></i> {{name}}</a></li>
+	{{/teams}}
+	{{/leagues}}
+	{{/sports}}
+</script>
+
+
+
+<script id="news-template" type="text/template">
+	{{#headlines}}
+	<div class="row" style="background-color:#f9f9f9;margin-bottom:3px;padding:10px 0px 10px 0px">
+	
+		<div class="span2">
+			{{#images}}
+			<img src={{url}} class="thumbnail"/>
+			{{/images}}
+		</div>
+		
+		<div class="span6">
+			<strong class="title">{{title}}</strong>
+			<div class="desc">{{description}}</div>
+		</div>
+		
+	</div>
+	{{/headlines}}
+</script>

@@ -1,0 +1,11 @@
+<h1><%=params[:sport_id]%> > leagues</h1>
+<br>
+
+<ul>
+	<%@parsed_leagues.each do |league|%>
+	<li>
+		<%=link_to league["name"], sport_league_teams_url(params[:sport_id],league["abbreviation"])%>
+		<small class="muted">(<%=league["abbreviation"]%>)</small>
+	</li>
+	<%end%>
+</ul>
