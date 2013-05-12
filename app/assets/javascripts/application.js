@@ -36,7 +36,7 @@ $(function() {
 	}
 	
 	function getTeams(sports_name,league_name){
-		url = "http://sports-news.dev/sports/"+sports_name+"/leagues/"+league_name+"/teams.json"
+		url = "/sports/"+sports_name+"/leagues/"+league_name+"/teams.json"
 
 		$.getJSON(url, function(data) {
 			var teams_template = $('#teams-template').html();
@@ -59,7 +59,7 @@ $(function() {
 		$('.teams').removeClass('pill')
 		$(this).addClass('pill')
 		
-		url = "http://sports-news.dev/sports/"+sports_name+"/leagues/"+league_name+"/teams/"+team_id+"/headlines.json"
+		url = "/sports/"+sports_name+"/leagues/"+league_name+"/teams/"+team_id+"/headlines.json"
 			
 		$.getJSON(url, function(data) {
 			var news_template = $('#news-template').html();
